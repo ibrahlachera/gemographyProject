@@ -1,0 +1,29 @@
+<div class="row mt-4"  *ngFor="let repository of listRepositories ">
+    <div class="col-md-12 no-padding lib-item">
+        <div class="lib-panel">
+            <div class="row box-shadow">
+                <div class="col-md-2">
+                    <img class="lib-img-show" [src]="repository.owner.avatar_url">
+                </div>
+                <div class="col-md-10">
+                    <div class="lib-row lib-header">
+                        {{repository.name}}
+                        <div class="lib-header-seperator">
+                            {{repository.description}}
+                        </div>
+                    </div>
+                    <div class="lib-row lib-desc mt-3">
+                        <span class="btn btn-primary">
+                          Stars:   <span class="badge badge-light">{{repository.stargazers_count}}</span>
+                        </span>  
+                        <span class="btn btn-warning ml-2">
+                            Issues:   <span class="badge badge-light">{{repository.open_issues_count}}</span>
+                          </span> 
+                        Submitted {{repository.created_at}} ago by {{repository.owner.login}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
